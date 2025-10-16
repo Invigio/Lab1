@@ -8,6 +8,9 @@
     --key-hover-factor: 1.2;
 }
 
+// Definicja zmiennej w Sass
+$operator-color: #ff9500;
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -66,7 +69,7 @@ body {
 
 .key {
     height: 70px;
-    border-radius: 50%; /* Okrągłe przyciski */
+    border-radius: 50%;
     border: none;
     background-color: var(--key-bg);
     color: var(--text-color);
@@ -89,10 +92,10 @@ body {
 }
 
 .key--operator {
-    background-color: var(--key-operator-bg);
+    background-color: $operator-color; // Użycie zmiennej
 }
 
 .key--span-two {
     grid-column: span 2;
-    border-radius: 35px; /* Dopasowanie do szerokości */
+    border-radius: 35px;
 }

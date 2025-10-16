@@ -1,0 +1,12 @@
+{
+  "name": "kalkulator-lab1",
+  "version": "1.0.0",
+  "description": "Kalkulator z automatycznym CI/CD",
+  "scripts": {
+    "build": "sass style.scss:style.css --style=compressed && html-minifier --input-dir . --output-dir . --file-ext html --remove-comments --collapse-whitespace"
+  },
+  "devDependencies": {
+    "html-minifier": "^4.0.0",
+    "sass": "^1.77.4"
+  }
+}

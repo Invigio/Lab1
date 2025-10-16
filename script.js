@@ -13,7 +13,6 @@ class Calculator {
         this.updateDisplay();
     }
 
-    // Zastępuje `delete` dla większej intuicyjności
     backspace() {
         if (this.isErrorState) return;
         if (this.currentOperand.length === 1) {
@@ -74,7 +73,6 @@ class Calculator {
             default: return;
         }
 
-        // Zaokrąglenie wyniku, aby uniknąć problemów z liczbami zmiennoprzecinkowymi
         this.currentOperand = Math.round(computation * 1000000) / 1000000;
         this.operation = undefined;
         this.previousOperand = '';
@@ -97,7 +95,6 @@ class Calculator {
     }
 }
 
-// Połączenie logiki z przyciskami w HTML
 const numberButtons = document.querySelectorAll('[data-number]');
 const operationButtons = document.querySelectorAll('[data-operation]');
 const equalsButton = document.querySelector('[data-equals]');
