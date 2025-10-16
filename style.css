@@ -1,0 +1,98 @@
+:root {
+    --bg-color: #1a1a1a;
+    --display-bg: #2b2b2b;
+    --key-bg: #4d4d4d;
+    --key-special-bg: #6b6b6b;
+    --key-operator-bg: #ff9500;
+    --text-color: #ffffff;
+    --key-hover-factor: 1.2;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.calculator-body {
+    width: 100%;
+    max-width: 380px;
+    background-color: var(--bg-color);
+    border-radius: 40px;
+    padding: 25px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.display {
+    width: 100%;
+    min-height: 120px;
+    padding: 20px;
+    background-color: var(--display-bg);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: var(--text-color);
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.previous-operand {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.current-operand {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.key {
+    height: 70px;
+    border-radius: 50%; /* Okrągłe przyciski */
+    border: none;
+    background-color: var(--key-bg);
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+}
+
+.key:hover {
+    filter: brightness(var(--key-hover-factor));
+}
+
+.key:active {
+    filter: brightness(0.9);
+}
+
+.key--special {
+    background-color: var(--key-special-bg);
+}
+
+.key--operator {
+    background-color: var(--key-operator-bg);
+}
+
+.key--span-two {
+    grid-column: span 2;
+    border-radius: 35px; /* Dopasowanie do szerokości */
+}
